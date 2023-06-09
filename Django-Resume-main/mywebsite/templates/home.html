@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Priya Sojan</title>
+	<link href="{% static '../static/css/main.css'  %}" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	
+</head>
+<body>
+	<p style="background-color: pink;"></p>
+	<br>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3">
+				<div class="card card-body h-100  border-info" id="profile-wrapper">
+					<img id="profile-pic" src="{% static '../static/images/woman.png' %}" >
+					<hr>
+					<h4>Hi I'm Priya!</h4>
+					<p>I love coding, doing research and collaborating</p>
+				</div>
+			</div>
+
+			<div class="col-md-9">
+				<div class="card card-body h-100  border-info">
+					<h4>My Projects</h4>
+					<hr>
+					<p>Created a virtual to-do list App. Enabled with options for creating, modifying and displaying contents in the list.</p>
+
+					<p>Created a Java Application for a medical store management system. Tables created that depict sales, product information, details of companies, and date of purchase. Can add, remove or display data. Login page for administrator. User-friendly.</p>
+
+					<ul class="social-links">
+						<li><img class="social" src="{% static 'images/facebook.png' %}"></li>
+						<li><img class="social" src="{% static 'images/linkedin.png' %}"></li>
+						<li><img class="social" src="{% static 'images/twitter.png' %}"></li>
+						<li><img class="social" src="{% static 'images/youtube.png' %}"></li>
+					</ul>
+
+				</div>
+			</div>
+		</div>
+		<br>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="card card-body h-100">
+					<h5>Additional Courses</h5>
+					<hr>
+					<p>Full stack developer/ Python.</p>
+					<p>Attended a three day program in full stack development. Front-end development- HTML,CSS and Javascript. Bootstrap implementation using Django Framework</p>
+					</div>
+			</div>
+
+			<div class="col-md-6">
+				<div class="card card-body h-100">
+					<h5>What I Know</h5>
+					<hr>
+					<p>Python, Django, HTML/CSS, JavaScript/Jquery</p>
+					<p>PS: Working on SQL, Machine Learning, Data Science, and Artificial Intelligence.</p>
+				</div>
+			</div>
+		</div>
+		<br>
+		<div class="row">
+			<div class="col-md-6">
+				{% for resumeapp in resumeapps %}
+				<div class="card card-body h-100"> 
+					<ul>
+					<p>NAME: {{resumeapp.name}}</p>
+					<p>PHONE: {{resumeapp.phone}}</p>
+					<p>Email: {{resumeapp.email}}</p> 
+					<p>Address: {{resumeapp.address}}</p>
+					<p>GITHUB PROFILE: {{resumeapp.github}}</p>
+
+				  </ul>
+				</div>
+				{% endfor %} 
+			</div>
+
+			<div class="col-md-6">
+				<div class="card card-body h-100">
+					<h5>My Short Term Goals</h5>
+				<hr>
+				<p>I’m always ready to learn something new. I like to collaborating and sharing my experience with others on my blog.</p>
+				<p>Aside from building small projects I would love to enter a position where I can be part of a bigger team & learn from others with more experience than myself.</p>
+
+				</div>
+			</div>
+
+		</div>
+		<br>
+	</div>
+
+
+</body>
+</html>
